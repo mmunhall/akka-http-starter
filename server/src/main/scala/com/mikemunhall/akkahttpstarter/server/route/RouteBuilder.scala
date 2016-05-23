@@ -1,12 +1,13 @@
-package com.canoeventures.sheringham.server.route
+package com.mikemunhall.akkahttpstarter.server.route
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.model.{HttpResponse, StatusCodes}
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import com.canoeventures.sheringham.server.{Settings, TestActor}
 import akka.pattern.ask
 import akka.util.Timeout
+import com.mikemunhall.akkahttpstarter.server.{Settings, TestActor}
+
 import scala.util.Success
 
 object RouteBuilder {

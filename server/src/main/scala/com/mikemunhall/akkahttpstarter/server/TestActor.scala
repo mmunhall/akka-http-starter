@@ -1,4 +1,4 @@
-package com.canoeventures.sheringham.server
+package com.mikemunhall.akkahttpstarter.server
 
 import akka.actor.{Actor, Props, Stash}
 import com.typesafe.scalalogging.StrictLogging

@@ -1,4 +1,4 @@
-package com.canoeventures.sheringham.server
+package com.mikemunhall.akkahttpstarter.server
 
 import java.util.concurrent.TimeUnit
 
@@ -16,9 +16,9 @@ object Settings extends ExtensionId[Settings] with ExtensionIdProvider {
 
 class Settings(config: Config, extendedSystem: ExtendedActorSystem) extends Extension {
   object Http {
-    val Port = config.getInt("sheringham.http.port")
-    val Interface = config.getString("sheringham.http.interface")
+    val Port = config.getInt("akka-http-starter.http.port")
+    val Interface = config.getString("akka-http-starter.http.interface")
   }
 
-  val askTimeout = FiniteDuration(config.getDuration("sheringham.ask-timeout", TimeUnit.MILLISECONDS), TimeUnit.MILLISECONDS)
+  val askTimeout = FiniteDuration(config.getDuration("akka-http-starter.ask-timeout", TimeUnit.MILLISECONDS), TimeUnit.MILLISECONDS)
 }

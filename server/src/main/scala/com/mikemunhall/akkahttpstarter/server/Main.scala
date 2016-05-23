@@ -1,10 +1,11 @@
-package com.canoeventures.sheringham.server
+package com.mikemunhall.akkahttpstarter.server
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
+import com.mikemunhall.akkahttpstarter.server.route.RouteBuilder
 import com.typesafe.scalalogging.StrictLogging
-import com.canoeventures.sheringham.server.route.RouteBuilder
+
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object Main extends App with StrictLogging {

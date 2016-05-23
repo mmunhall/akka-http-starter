@@ -5,50 +5,53 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.canoeventures.akka-http-starter</groupId>
+    <groupId>com.mikemunhall.akka-http-starter</groupId>
     <artifactId>server</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1</version>
-
-    <parent>
-        <groupId>com.canoeventures.common-lib</groupId>
-        <artifactId>scala-parent</artifactId>
-        <version>5.0.0-SNAPSHOT</version>
-    </parent>
 
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
+            <version>2.11.7</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
             <artifactId>scala-xml_2.11.0-RC4</artifactId>
+            <version>1.0.1</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_2.11</artifactId>
+            <version>2.2.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-slf4j_2.11</artifactId>
             <version>2.3.12</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.1.7</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.11</artifactId>
             <version>2.4.3</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-http-experimental_2.11</artifactId>
             <version>2.4.3</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -66,6 +69,7 @@
             <groupId>com.typesafe.scala-logging</groupId>
             <artifactId>scala-logging_2.11</artifactId>
             <version>3.4.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -94,7 +98,7 @@
                 <configuration>
                     <scalaVersion>2.11.5</scalaVersion>
                     <args>
-                        <arg>-target:jvm-1.7</arg>
+                        <arg>-target:jvm-1.8</arg>
                     </args>
                 </configuration>
             </plugin>
@@ -139,7 +143,7 @@
                             <transformers>
                                 <!-- add Main-Class to manifest file -->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.canoeventures.sheringham.server.Main</mainClass>
+                                    <mainClass>com.mikemunhall.akkahttpstarter.server.Main</mainClass>
                                 </transformer>
                                 <!-- Append all reference.conf files so only one exists in the end. -->
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
