@@ -9,15 +9,15 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 object Main extends App with StrictLogging {
 
-  logger.info("Starting Sheringham application")
+  logger.info("Starting application")
 
-  implicit val system = ActorSystem("sheringham")
+  implicit val system = ActorSystem("akka-http-starter")
   implicit val materializer = ActorMaterializer()
 
   val host = Settings(system).Http.Interface
   val port = Settings(system).Http.Port
 
-  val route = RouteBuilder.build
+  val route = RouteBuilder.build(system)
   val bindingFuture = Http().bindAndHandle(route, host, port)
 
   bindingFuture onFailure {
@@ -26,7 +26,7 @@ object Main extends App with StrictLogging {
   }
 
   sys addShutdownHook {
-    logger.info("Shutting down Sheringham application")
+    logger.info("Shutting down application")
     bindingFuture.flatMap(_.unbind()).onComplete(_ => system.terminate())
   }
 }

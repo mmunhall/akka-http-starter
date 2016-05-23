@@ -11,9 +11,8 @@ import scala.util.Success
 
 object RouteBuilder {
 
-  def build: Route = {
+  def build(system: ActorSystem): Route = {
 
-    implicit val system = ActorSystem("sheringham")
     implicit val timeout: Timeout = Settings(system).askTimeout
 
     val testActor = system.actorOf(TestActor.props, "testActor")
