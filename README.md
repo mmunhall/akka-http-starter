@@ -28,3 +28,14 @@ There are two properties that should be specified for non-local development:
 * _logback.configurationFile_: The path to the logging configuration file.
 
 If either of these properties are not defined, configurations suitable for local development (`server/src/main/resources/{application.conf, logback.xml}`) will be loaded by default.
+
+Usage
+-----
+
+The application contains a single test route: `/api`. The route requires a parameter `message`. The route will simply
+echo the value of the `message` parameter unless the value is "fail", in which case an HTTP status code of 500 is returned.
+
+### Examples ###
+
+    http://localhost:8080/api?message=helloworld
+    http://localhost:8080/api?message=fail
