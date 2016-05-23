@@ -5,12 +5,15 @@ import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.mikemunhall.akkahttpstarter.server.route.RouteBuilder
 import com.typesafe.scalalogging.StrictLogging
+import kamon.Kamon
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object Main extends App with StrictLogging {
 
   logger.info("Starting application")
+
+  Kamon.start()
 
   implicit val system = ActorSystem("akka-http-starter")
   implicit val materializer = ActorMaterializer()
@@ -28,6 +31,7 @@ object Main extends App with StrictLogging {
 
   sys addShutdownHook {
     logger.info("Shutting down application")
+    Kamon.shutdown()
     bindingFuture.flatMap(_.unbind()).onComplete(_ => system.terminate())
   }
 }
