@@ -76,6 +76,21 @@
             <artifactId>kamon-core_2.11</artifactId>
             <version>0.6.0</version>
         </dependency>
+        <dependency>
+            <groupId>io.kamon</groupId>
+            <artifactId>kamon-statsd_2.11</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.kamon</groupId>
+            <artifactId>kamon-datadog_2.11</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.kamon</groupId>
+            <artifactId>kamon-akka_2.11</artifactId>
+            <version>0.6.0</version>
+        </dependency>
     </dependencies>
 
     <build>
