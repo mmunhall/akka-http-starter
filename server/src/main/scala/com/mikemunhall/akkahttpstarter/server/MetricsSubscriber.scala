@@ -16,7 +16,5 @@ class MetricsSubscriber extends Actor with StrictLogging {
         val counterSnapshot = s.counter("counter").get
         logger.debug("Counter [%s] was incremented [%d] times.".format(e.name, counterSnapshot.count))
       }
-    case _ =>
-      logger.debug("unknown metrics event received")
   }
 }
